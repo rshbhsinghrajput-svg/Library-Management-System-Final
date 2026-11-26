@@ -1,4 +1,4 @@
-const API = window.LIBRARY_API_URL || "http://localhost:8080/api";
+const API = "https://library-management-system-final-production.up.railway.app/api";
 const $=s=>document.querySelector(s);
 function openModal(html){$("#modalBody").innerHTML=html;$("#modal").style.display="flex"} function closeModal(){$("#modal").style.display="none"}
 async function api(path,opt={}){let r=await fetch(API+path,{headers:{"Content-Type":"application/json"},...opt});if(!r.ok){let t=await r.text();throw new Error(t||"Request failed")}return r.status===204?null:r.json()}
